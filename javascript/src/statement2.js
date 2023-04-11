@@ -1,10 +1,10 @@
 const createStatementData = require('./createStatementData');
 
-function statement (invoice, plays) {
-    return renderPlainText(createStatementData(invoice, plays));
+function htmlStatement (invoice, plays) {
+    return rendHtml(createStatementData(invoice, plays));
 }
 
-function renderPlainText(data) {
+function rendHtml(data) {
     let result = `Statement for ${data.customer}\n`;
 
     for (let perf of data.performances) {
@@ -24,4 +24,4 @@ function renderPlainText(data) {
     }
 
 }
-module.exports = statement;
+module.exports = htmlStatement;
